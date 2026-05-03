@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,11 +53,11 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public ResponseEntity<?> addProducts(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
+    public ResponseEntity<?> updateProducts(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
 
         Product savedProduct;
         try {
-            savedProduct = productService.addProduct(product, imageFile);
+            savedProduct = productService.addOrUpdateProduct(product, imageFile);
             return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
         } catch (IOException e) {
            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -64,6 +65,7 @@ public class ProductController {
         
     }
 
-
-
 }
+
+
+
