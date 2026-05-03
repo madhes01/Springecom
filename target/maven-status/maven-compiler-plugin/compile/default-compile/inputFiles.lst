@@ -1,0 +1,6 @@
+/workspaces/Springecom/src/main/java/com/example/backend/BackendApplication.java
+/workspaces/Springecom/src/main/java/com/example/backend/controller/HelloController.java
+/workspaces/Springecom/src/main/java/com/example/backend/controller/ProductController.java
+/workspaces/Springecom/src/main/java/com/example/backend/model/Product.java
+/workspaces/Springecom/src/main/java/com/example/backend/repo/ProductRepo.java
+/workspaces/Springecom/src/main/java/com/example/backend/service/ProductService.java
