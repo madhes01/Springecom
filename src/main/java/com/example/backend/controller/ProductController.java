@@ -33,7 +33,7 @@ public class ProductController {
         return new ResponseEntity<>(productService.getAllProducts(), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/product/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable int id) {
         Product product = productService.getProductById(id);
         if(product.getId() > 0) {
@@ -44,7 +44,7 @@ public class ProductController {
         
     }
 
-    @GetMapping("/products/{productId}/image")
+    @GetMapping("/product/{productId}/image")
     public ResponseEntity<byte[]> getImageByProductId(@PathVariable int productId) {
         Product product = productService.getProductById(productId);
         if(product.getId() > 0) {
@@ -54,7 +54,7 @@ public class ProductController {
         }
     }
 
-    @PostMapping("/products")
+    @PostMapping("/product")
     public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile) {
 
         Product savedProduct;
