@@ -3,9 +3,11 @@ package com.example.backend.model;
 import java.math.BigDecimal;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data  
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class OrderItem {
 
     @Id
@@ -25,6 +28,6 @@ public class OrderItem {
 
     private BigDecimal totalPrice;
 
-    @ManyToOne(fetch=jakarta.persistence.FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     private Order order;
 }
